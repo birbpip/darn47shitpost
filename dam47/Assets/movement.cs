@@ -44,6 +44,7 @@ public class movementscrirpt : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        Debug.Log(grounded);
         
     }
     void CapVelocity()
@@ -78,7 +79,7 @@ public class movementscrirpt : MonoBehaviour
         MyInput();
         
         
-        grounded = (Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f, whatisGround));
+        //grounded = (Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f, whatisGround));
         if (grounded)
             rb.drag = groundDrag;
         else
@@ -97,7 +98,7 @@ public class movementscrirpt : MonoBehaviour
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
         else {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 3f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
 
     }
