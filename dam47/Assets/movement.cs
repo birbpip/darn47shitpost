@@ -44,10 +44,7 @@ public class movementscrirpt : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
-        if (grounded == false) // Check if the object is in the air
-        {
-            CapVelocity();
-        }
+        
     }
     void CapVelocity()
     {

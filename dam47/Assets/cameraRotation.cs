@@ -52,6 +52,18 @@ public class cameraRotation : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 10f);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -10f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+        }
     }
 
     IEnumerator StopTimeForHalfSecond()
